@@ -13,20 +13,16 @@ export function useScrollReveal<T extends HTMLElement>(
   options: RevealOptions = {}
 ) {
   const { threshold = 0.2, rootMargin = "0px 0px -8% 0px", once = true } = options;
-  const [isRevealed, setIsRevealed] = useState(false);
+
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const [isRevealed, setIsRevealed] = useState(prefersReducedMotion);
 
   useEffect(() => {
     const node = ref.current;
-    if (!node) return;
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) {
-      setIsRevealed(true);
-      return;
-    }
+    if (!node || prefersReducedMotion) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -47,7 +43,7 @@ export function useScrollReveal<T extends HTMLElement>(
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, [once, ref, rootMargin, threshold]);
+  }, [once, prefersReducedMotion, ref, rootMargin, threshold]);
 
   return isRevealed;
 }

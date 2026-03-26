@@ -48,12 +48,13 @@ export function ContactBlock() {
         </div>
       </div>
 
-      <Modal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        title="Before we meet"
-        description="Share your timeline, current website, and the audience you want to move. We will tailor the session around your most important conversion and storytelling challenges."
-      />
+      {isOpen ? (
+        <Modal
+          onClose={() => setIsOpen(false)}
+          title="Before we meet"
+          description="Share your timeline, current website, and the audience you want to move. We will tailor the session around your most important conversion and storytelling challenges."
+        />
+      ) : null}
     </section>
   );
 }

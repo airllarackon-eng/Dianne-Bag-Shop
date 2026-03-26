@@ -11,10 +11,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     if (!isOpen) return;
 
     const { body } = document;
@@ -65,6 +61,7 @@ export function Navbar() {
                     href={item.href}
                     className={`${styles.link} ${isActive ? styles.active : ""}`}
                     aria-current={isActive ? "page" : undefined}
+                    onClick={() => setIsOpen(false)}
                   >
                     {item.label}
                   </Link>
