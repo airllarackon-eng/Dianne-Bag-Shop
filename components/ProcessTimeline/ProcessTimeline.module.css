@@ -1,0 +1,68 @@
+.section {
+  padding: var(--space-7) 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.headingBlock h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  margin-bottom: var(--space-3);
+}
+
+.headingBlock p {
+  color: var(--color-muted);
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: var(--color-paper-strong);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth);
+}
+
+.item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+}
+
+.stepNumber {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-top: 0.22rem;
+}
+
+.item h3 {
+  font-size: 1.48rem;
+  margin-bottom: var(--space-1);
+}
+
+.item p {
+  color: var(--color-muted);
+}
+
+@media (max-width: 64rem) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
