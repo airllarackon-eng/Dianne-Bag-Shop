@@ -1,0 +1,98 @@
+.section {
+  padding: var(--space-7) 0;
+}
+
+.header {
+  margin-bottom: var(--space-4);
+}
+
+.header h2 {
+  font-size: clamp(1.9rem, 3.8vw, 3rem);
+}
+
+.carousel {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-paper-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.track {
+  display: flex;
+  transition:
+    transform 0.7s var(--ease-smooth),
+    opacity 0.45s var(--ease-smooth);
+}
+
+.slide {
+  min-width: 100%;
+  padding: clamp(1.45rem, 3.8vw, 3rem);
+}
+
+.quote {
+  font-family: var(--font-heading), serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: var(--space-3);
+  line-height: 1.25;
+}
+
+.author {
+  font-weight: 700;
+}
+
+.role {
+  color: var(--color-muted);
+}
+
+.controls {
+  margin-top: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.controls > button {
+  min-width: 4rem;
+  min-height: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper-strong);
+  transition:
+    transform var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth),
+    border-color var(--duration-fast) var(--ease-smooth);
+}
+
+.controls > button:hover,
+.controls > button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+  border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border));
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dots button {
+  width: 0.82rem;
+  height: 0.82rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-paper) 80%, white);
+  transition:
+    transform var(--duration-fast) var(--ease-smooth),
+    background-color var(--duration-fast) var(--ease-smooth),
+    border-color var(--duration-fast) var(--ease-smooth);
+}
+
+.dots button:hover,
+.dots button:focus-visible,
+.dots .active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.1);
+}

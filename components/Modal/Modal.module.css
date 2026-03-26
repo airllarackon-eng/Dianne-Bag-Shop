@@ -1,0 +1,109 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+  backdrop-filter: blur(4px);
+  border: 0;
+}
+
+.dialog {
+  position: relative;
+  width: min(100% - 2rem, 34rem);
+  background: var(--color-paper-strong);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-strong);
+  padding: var(--space-5);
+  z-index: 1;
+}
+
+.dialog h3 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: var(--space-2);
+}
+
+.dialog p {
+  color: var(--color-muted);
+}
+
+.closeButton {
+  min-height: 2.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.9rem;
+  background: transparent;
+  margin-bottom: var(--space-3);
+}
+
+.show {
+  animation: overlayIn 0.3s var(--ease-smooth) forwards;
+}
+
+.hide {
+  animation: overlayOut 0.3s var(--ease-smooth) forwards;
+}
+
+.dialogShow {
+  animation: dialogIn 0.3s var(--ease-smooth) forwards;
+}
+
+.dialogHide {
+  animation: dialogOut 0.3s var(--ease-smooth) forwards;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes overlayOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes dialogOut {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .show,
+  .hide,
+  .dialogShow,
+  .dialogHide {
+    animation: none;
+  }
+}

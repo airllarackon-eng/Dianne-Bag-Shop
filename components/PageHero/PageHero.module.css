@@ -1,0 +1,55 @@
+.hero {
+  padding: var(--space-7) 0 var(--space-6);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.copy {
+  grid-column: span 5;
+}
+
+.copy h1 {
+  font-size: clamp(2.3rem, 5vw, 4.3rem);
+  margin-bottom: var(--space-3);
+}
+
+.copy p {
+  color: var(--color-muted);
+  font-size: clamp(1.03rem, 1.5vw, 1.2rem);
+}
+
+.imageWrap {
+  grid-column: span 7;
+  position: relative;
+  aspect-ratio: 7 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.imageWrap img {
+  object-fit: cover;
+}
+
+@media (max-width: 64rem) {
+  .copy {
+    grid-column: span 6;
+  }
+
+  .imageWrap {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 48rem) {
+  .copy,
+  .imageWrap {
+    grid-column: 1 / -1;
+  }
+}

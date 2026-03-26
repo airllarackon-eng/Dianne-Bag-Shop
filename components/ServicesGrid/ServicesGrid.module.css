@@ -1,0 +1,43 @@
+.section {
+  padding: var(--space-7) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.card {
+  grid-column: span 6;
+  background: var(--color-paper-strong);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.35rem, 2.4vw, 2rem);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth),
+    border-color var(--duration-fast) var(--ease-smooth);
+}
+
+.card h3 {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  margin-bottom: var(--space-2);
+}
+
+.card p {
+  color: var(--color-muted);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+  border-color: color-mix(in srgb, var(--color-accent) 42%, var(--color-border));
+}
+
+@media (max-width: 48rem) {
+  .card {
+    grid-column: 1 / -1;
+  }
+}

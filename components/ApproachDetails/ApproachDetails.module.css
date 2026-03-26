@@ -1,0 +1,57 @@
+.section {
+  padding: var(--space-7) 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: var(--space-6);
+}
+
+.copy h2 {
+  font-size: clamp(2rem, 4.4vw, 3.25rem);
+  margin-bottom: var(--space-3);
+}
+
+.copy p {
+  color: var(--color-muted);
+}
+
+.timeline {
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: var(--color-paper-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.year {
+  display: inline-flex;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+.item h3 {
+  font-size: 1.4rem;
+  margin-bottom: var(--space-2);
+}
+
+.item p {
+  color: var(--color-muted);
+}
+
+@media (max-width: 64rem) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

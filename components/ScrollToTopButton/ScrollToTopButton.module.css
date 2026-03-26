@@ -1,0 +1,33 @@
+.button {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 1000;
+  min-height: 2.9rem;
+  min-width: 2.9rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 52%, var(--color-border));
+  background: var(--color-paper-strong);
+  color: var(--color-accent);
+  font-weight: 700;
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  pointer-events: none;
+  box-shadow: var(--shadow-soft);
+  transition:
+    opacity var(--duration-fast) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth);
+}
+
+.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  pointer-events: auto;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: var(--shadow-medium);
+}

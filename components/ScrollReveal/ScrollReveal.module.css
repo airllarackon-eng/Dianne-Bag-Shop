@@ -1,0 +1,38 @@
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  filter: blur(8px);
+  will-change: transform, opacity, filter;
+  transition:
+    opacity var(--duration-medium) var(--ease-smooth),
+    transform var(--duration-medium) var(--ease-smooth),
+    filter var(--duration-medium) var(--ease-smooth);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.isVisible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+.up {
+  transform: translate3d(0, 40px, 0);
+}
+
+.left {
+  transform: translate3d(-52px, 0, 0);
+}
+
+.right {
+  transform: translate3d(52px, 0, 0);
+}
+
+.scale {
+  transform: scale(0.9);
+}
+
+.blur {
+  transform: translate3d(0, 22px, 0);
+  filter: blur(8px);
+}
