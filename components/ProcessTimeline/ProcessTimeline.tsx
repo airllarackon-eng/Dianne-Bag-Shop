@@ -8,10 +8,10 @@ export function ProcessTimeline() {
       <div className="container">
         <div className={styles.wrapper}>
           <ScrollReveal variant="left" className={styles.headingBlock}>
-            <h2 id="process-heading">How we shape and ship work</h2>
+            <h2 id="process-heading">How our curation process protects quality</h2>
             <p>
-              A clear process gives teams confidence while protecting creative range. We keep
-              momentum high and decisions grounded.
+              OrnaLuxe follows a clear product approach so each collection maintains premium
+              finish, practical utility, and lasting style.
             </p>
           </ScrollReveal>
 

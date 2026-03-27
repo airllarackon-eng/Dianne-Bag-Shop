@@ -7,7 +7,7 @@ export function CapabilitiesList() {
     <section className={styles.section} aria-labelledby="capabilities-heading">
       <div className="container">
         <ScrollReveal className={styles.heading}>
-          <h2 id="capabilities-heading">Capabilities in detail</h2>
+          <h2 id="capabilities-heading">What defines each OrnaLuxe collection</h2>
         </ScrollReveal>
 
         <div className={styles.grid}>

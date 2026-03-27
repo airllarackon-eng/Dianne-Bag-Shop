@@ -19,7 +19,7 @@ export function Hero() {
     }
 
     const onScroll = () => {
-      setOffsetY(window.scrollY * 0.12);
+      setOffsetY(window.scrollY * 0.1);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });

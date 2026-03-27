@@ -3,19 +3,19 @@ import { CapabilitiesList } from "@/components/CapabilitiesList/CapabilitiesList
 import { ContactBlock } from "@/components/ContactBlock/ContactBlock";
 import { PageHero } from "@/components/PageHero/PageHero";
 import { ProcessTimeline } from "@/components/ProcessTimeline/ProcessTimeline";
+import { SectionIntro } from "@/components/SectionIntro/SectionIntro";
 import { ServicesGrid } from "@/components/ServicesGrid/ServicesGrid";
-import { TestimonialsCarousel } from "@/components/TestimonialsCarousel/TestimonialsCarousel";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Collections",
   description:
-    "Explore Foundry Lane services across positioning, design systems, front-end delivery, and launch support.",
+    "Browse OrnaLuxe curated collections of premium bags and accessories that merge timeless sophistication with modern trends.",
   openGraph: {
-    title: "Services | Foundry Lane",
+    title: "Collections | OrnaLuxe",
     description:
-      "Detailed service capabilities for teams that need strategic direction and production-grade execution.",
-    url: "https://foundrylane.studio/services",
+      "Explore OrnaLuxe collection categories and curation standards for luxury work bags and statement accessories.",
+    url: "https://ornaluxe.com/services",
   },
 };
 
@@ -23,15 +23,23 @@ export default function ServicesPage() {
   return (
     <div className={`pageTransition ${styles.page}`}>
       <PageHero
-        title="Capabilities built for modern launch cycles"
-        subtitle="Our work spans strategy, design, and implementation so teams can move quickly without sacrificing craft or consistency."
-        imageSrc="https://picsum.photos/id/1043/1200/780"
-        imageAlt="Design system board with typography, spacing tokens, and interface components"
+        title="Collections designed for modern luxury routines"
+        subtitle="Explore categories built for elegance, utility, and everyday confidence."
+        imageSrc="https://picsum.photos/id/103/1200/780"
+        imageAlt="Premium handbags and accessories arranged by category on a modern display table"
       />
+      <section className={styles.summary} aria-labelledby="collections-summary-heading">
+        <div className="container">
+          <SectionIntro
+            eyebrow="Collection promise"
+            title="OrnaLuxe offers a carefully curated selection of premium pieces designed to blend timeless sophistication with modern trends."
+            body="Every item we provide is chosen with attention to detail, ensuring durability, beauty, and a touch of exclusivity."
+          />
+        </div>
+      </section>
       <ServicesGrid />
       <CapabilitiesList />
       <ProcessTimeline />
-      <TestimonialsCarousel />
       <ContactBlock />
     </div>
   );

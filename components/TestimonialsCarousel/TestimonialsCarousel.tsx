@@ -20,7 +20,7 @@ export function TestimonialsCarousel() {
 
     const id = window.setInterval(() => {
       setIndex((prev) => (prev + 1) % total);
-    }, 5500);
+    }, 5600);
 
     return () => window.clearInterval(id);
   }, [total]);
@@ -34,14 +34,14 @@ export function TestimonialsCarousel() {
     <section className={styles.section} aria-labelledby="testimonials-heading">
       <div className="container">
         <ScrollReveal variant="up" className={styles.header}>
-          <h2 id="testimonials-heading">What partners say</h2>
+          <h2 id="testimonials-heading">Customer voices</h2>
         </ScrollReveal>
 
         <div className={styles.carousel}>
           <div className={styles.track} style={trackStyle}>
             {testimonials.map((item) => (
               <article key={item.name} className={styles.slide}>
-                <p className={styles.quote}>“{item.quote}”</p>
+                <p className={styles.quote}>&quot;{item.quote}&quot;</p>
                 <p className={styles.author}>{item.name}</p>
                 <p className={styles.role}>{item.role}</p>
               </article>

@@ -11,14 +11,17 @@ function easeOutCubic(t: number) {
 
 function useCountUp(target: number) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const prefersReducedMotion =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const [value, setValue] = useState(prefersReducedMotion ? target : 0);
+  const [value, setValue] = useState(target);
 
   useEffect(() => {
     const node = ref.current;
-    if (!node || prefersReducedMotion) return;
+    if (!node) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
 
     let rafId = 0;
     let started = false;
@@ -53,7 +56,7 @@ function useCountUp(target: number) {
       observer.disconnect();
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [prefersReducedMotion, target]);
+  }, [target]);
 
   return { ref, value };
 }
