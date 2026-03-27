@@ -7,11 +7,8 @@ export default function NotFound() {
       <section className={styles.section}>
         <div className="container">
           <p className={styles.code}>404</p>
-          <h1>This page could not be found.</h1>
-          <p>
-            The page may have moved or been removed. You can return home to continue exploring
-            the studio.
-          </p>
+          <h1>Page not found.</h1>
+          <p>The page may have moved or no longer exists. Return home to continue browsing OrnaLuxe.</p>
           <Link href="/" className={styles.link}>
             Return home
           </Link>

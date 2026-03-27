@@ -1,45 +1,45 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { ScrollToTopButton } from "@/components/ScrollToTopButton/ScrollToTopButton";
 import layoutStyles from "./layout.module.css";
 import "./globals.css";
 
-const manrope = Manrope({
+const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://foundrylane.studio"),
+  metadataBase: new URL("https://ornaluxe.com"),
   title: {
-    default: "Foundry Lane",
-    template: "%s | Foundry Lane",
+    default: "OrnaLuxe",
+    template: "%s | OrnaLuxe",
   },
   description:
-    "Foundry Lane is a strategic digital studio shaping ambitious brands through editorial design, web systems, and launch campaigns.",
+    "OrnaLuxe is a premium lifestyle and accessories brand curating luxury bags and statement essentials for modern professionals.",
   openGraph: {
-    title: "Foundry Lane",
+    title: "OrnaLuxe",
     description:
-      "Strategic creative studio for growth-stage brands, blending design direction, storytelling, and high-performance websites.",
-    url: "https://foundrylane.studio",
-    siteName: "Foundry Lane",
+      "Explore OrnaLuxe collections of premium bags and refined accessories designed for confidence, elegance, and timeless style.",
+    url: "https://ornaluxe.com",
+    siteName: "OrnaLuxe",
     type: "website",
     images: [
       {
-        url: "https://placehold.co/1200x630/f5f0e8/121212?text=Foundry+Lane+Studio",
+        url: "https://placehold.co/1200x630/f3eee5/1a1713?text=OrnaLuxe+Premium+Accessories",
         width: 1200,
         height: 630,
-        alt: "Foundry Lane studio brand presentation cover",
+        alt: "OrnaLuxe premium accessories brand cover with editorial styling",
       },
     ],
   },
@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${cormorant.variable}`}
+      className={`${inter.variable} ${playfair.variable}`}
       suppressHydrationWarning
     >
       <body>

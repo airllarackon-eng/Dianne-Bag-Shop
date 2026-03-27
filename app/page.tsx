@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { ContactBlock } from "@/components/ContactBlock/ContactBlock";
-import { FaqAccordion } from "@/components/FaqAccordion/FaqAccordion";
 import { Hero } from "@/components/Hero/Hero";
-import { ProcessTimeline } from "@/components/ProcessTimeline/ProcessTimeline";
 import { SectionIntro } from "@/components/SectionIntro/SectionIntro";
 import { ServicesGrid } from "@/components/ServicesGrid/ServicesGrid";
 import { StatsSection } from "@/components/StatsSection/StatsSection";
@@ -14,12 +12,12 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Foundry Lane builds editorial digital experiences for ambitious teams who need strategy, design, and front-end execution in one studio partner.",
+    "OrnaLuxe curates premium bags and accessories for young professionals seeking timeless style, refined detail, and confident expression.",
   openGraph: {
-    title: "Home | Foundry Lane",
+    title: "Home | OrnaLuxe",
     description:
-      "Explore Foundry Lane's strategic approach to brand systems, high-performance websites, and launch campaigns.",
-    url: "https://foundrylane.studio/",
+      "Discover OrnaLuxe collections of quality work bags and luxury accessories designed for modern everyday elegance.",
+    url: "https://ornaluxe.com/",
   },
 };
 
@@ -28,10 +26,10 @@ export default function HomePage() {
     <div className={`pageTransition ${styles.page}`}>
       <Hero />
 
-      <section className={styles.introSection} aria-labelledby="studio-overview-heading">
+      <section className={styles.introSection} aria-labelledby="brand-overview-heading">
         <div className="container">
           <SectionIntro
-            eyebrow="Studio overview"
+            eyebrow="Brand overview"
             title={SITE.description}
             body={`Audience: ${SITE.audience} Goal: ${SITE.primaryGoal}`}
           />
@@ -39,11 +37,9 @@ export default function HomePage() {
       </section>
 
       <ServicesGrid />
-      <ProcessTimeline />
-      <StatsSection />
       <WorkPreview />
+      <StatsSection />
       <TestimonialsCarousel />
-      <FaqAccordion />
       <ContactBlock />
     </div>
   );

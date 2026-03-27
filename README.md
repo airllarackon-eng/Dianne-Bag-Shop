@@ -1,14 +1,14 @@
-# Foundry Lane
+# OrnaLuxe
 
-Foundry Lane is a production-ready static website built with Next.js App Router and TypeScript. It presents a strategic digital studio with a premium editorial design language, scroll-triggered motion, responsive interaction patterns, and accessible component architecture.
+OrnaLuxe is a production-ready static e-commerce website built with Next.js App Router and TypeScript. It presents a premium accessories brand with editorial layouts, refined motion, accessible interactions, and reusable component architecture.
 
 ## Project Overview
 
-- **Website Name:** Foundry Lane
-- **Type:** Creative agency / digital studio website
-- **One-line description:** An editorial-style agency site showcasing strategy, services, case studies, team expertise, and project inquiry pathways.
-- **Target audience:** Founders and marketing leaders at growth-stage companies.
-- **Primary goal:** Convert visitors into qualified project inquiries.
+- **Website Name:** OrnaLuxe
+- **Type:** Premium accessories e-commerce website
+- **One-line description:** A luxury-focused digital storefront highlighting curated bags and statement accessories.
+- **Target audience:** Young professionals aged 25 to 40 seeking quality bags and accessories.
+- **Primary goal:** Draw attention to premium bag categories and drive collection exploration.
 
 ## Prerequisites
 
@@ -35,21 +35,22 @@ Then open `http://localhost:3000`.
 npm run build
 ```
 
-This project uses `output: 'export'` in `next.config.ts`, so the build generates a static `out/` directory suitable for static hosting.
+This project uses `output: 'export'` in `next.config.js`, so the build generates a static `out/` folder suitable for deployment on static hosting.
 
 ## Tech stack
 
 - Next.js (App Router)
 - TypeScript (strict mode)
 - CSS Modules + global design tokens
-- next/font (Google fonts, self-hosted)
-- next/image and next/link
+- `next/font` (Google fonts, self-hosted)
+- `next/image` and `next/link`
 
 ## File structure
 
 ```text
 project-root/
 ├── app/
+│   ├── favicon.ico
 │   ├── layout.tsx
 │   ├── globals.css
 │   ├── layout.module.css
@@ -59,9 +60,6 @@ project-root/
 │   │   ├── page.tsx
 │   │   └── page.module.css
 │   ├── services/
-│   │   ├── page.tsx
-│   │   └── page.module.css
-│   ├── work/
 │   │   ├── page.tsx
 │   │   └── page.module.css
 │   ├── contact/
@@ -81,27 +79,25 @@ project-root/
 │   ├── TestimonialsCarousel/
 │   ├── FaqAccordion/
 │   ├── ContactBlock/
+│   ├── ContactDetails/
 │   ├── ContactForm/
 │   ├── Modal/
 │   ├── PageHero/
 │   ├── TeamGrid/
 │   ├── CapabilitiesList/
 │   ├── ValuesStrip/
-│   ├── CaseStudiesGrid/
-│   ├── AwardsStrip/
 │   ├── ApproachDetails/
 │   ├── ScrollToTopButton/
 │   └── ScrollReveal/
 ├── hooks/
-│   ├── useScrollReveal.ts
-│   └── useAutoReveal.ts
+│   └── useScrollReveal.ts
 ├── lib/
 │   ├── types.ts
 │   └── site-data.ts
 ├── public/
 │   ├── images/
 │   └── favicon.ico
-├── next.config.ts
+├── next.config.js
 ├── tsconfig.json
 ├── package.json
 └── README.md
@@ -109,5 +105,5 @@ project-root/
 
 ## Credits
 
-- Fonts: [Google Fonts](https://fonts.google.com/) via `next/font/google` (Cormorant Garamond and Manrope)
+- Fonts: [Google Fonts](https://fonts.google.com/) via `next/font/google` (Playfair Display and Inter)
 - Placeholder images: [picsum.photos](https://picsum.photos) and [placehold.co](https://placehold.co)

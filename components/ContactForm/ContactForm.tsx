@@ -7,14 +7,14 @@ import styles from "./ContactForm.module.css";
 interface FormState {
   name: string;
   email: string;
-  company: string;
+  category: string;
   message: string;
 }
 
 const initialState: FormState = {
   name: "",
   email: "",
-  company: "",
+  category: "",
   message: "",
 };
 
@@ -27,10 +27,11 @@ export function ContactForm() {
     event.preventDefault();
     const nextErrors: Partial<FormState> = {};
 
-    if (!form.name.trim()) nextErrors.name = "Please share your name.";
+    if (!form.name.trim()) nextErrors.name = "Please enter your name.";
     if (!/^\S+@\S+\.\S+$/.test(form.email)) nextErrors.email = "Enter a valid email address.";
+    if (!form.category.trim()) nextErrors.category = "Please choose a product category.";
     if (!form.message.trim() || form.message.trim().length < 20) {
-      nextErrors.message = "Please add at least 20 characters about your project.";
+      nextErrors.message = "Please add at least 20 characters so we can guide you well.";
     }
 
     setErrors(nextErrors);
@@ -45,10 +46,10 @@ export function ContactForm() {
     <section className={styles.section} aria-labelledby="contact-form-heading">
       <div className="container">
         <ScrollReveal className={styles.shell} variant="up">
-          <h2 id="contact-form-heading">Tell us about your project</h2>
+          <h2 id="contact-form-heading">Send us your request</h2>
           <p>
-            This is a front-end only form for planning purposes. We use your goals to frame the
-            first strategy conversation.
+            This is a front-end form for demonstration. Share what you need and our team can follow
+            up with suitable options.
           </p>
 
           <form onSubmit={onSubmit} noValidate>
@@ -81,17 +82,25 @@ export function ContactForm() {
               </div>
 
               <div className={styles.full}>
-                <label htmlFor="company">Company</label>
+                <label htmlFor="category">Preferred category</label>
                 <input
-                  id="company"
-                  name="company"
-                  value={form.company}
-                  onChange={(event) => setForm((prev) => ({ ...prev, company: event.target.value }))}
+                  id="category"
+                  name="category"
+                  value={form.category}
+                  onChange={(event) => setForm((prev) => ({ ...prev, category: event.target.value }))}
+                  aria-invalid={Boolean(errors.category)}
+                  aria-describedby={errors.category ? "category-error" : undefined}
+                  placeholder="Example: Executive tote or evening clutch"
                 />
+                {errors.category ? (
+                  <span id="category-error" className={styles.error}>
+                    {errors.category}
+                  </span>
+                ) : null}
               </div>
 
               <div className={styles.full}>
-                <label htmlFor="message">Project goals</label>
+                <label htmlFor="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -109,10 +118,10 @@ export function ContactForm() {
               </div>
             </div>
 
-            <button type="submit">Submit inquiry</button>
+            <button type="submit">Submit request</button>
             {submitted ? (
               <p className={styles.success} role="status">
-                Thanks. Your inquiry draft has been captured for review.
+                Thank you. Your request has been captured.
               </p>
             ) : null}
           </form>

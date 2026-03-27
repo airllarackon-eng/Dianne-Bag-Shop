@@ -18,28 +18,57 @@
 
 .card {
   grid-column: span 4;
-  padding: var(--space-4);
-  border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   background: var(--color-paper-strong);
+  padding: var(--space-4);
   box-shadow: var(--shadow-soft);
   transition:
     transform var(--duration-fast) var(--ease-smooth),
-    box-shadow var(--duration-fast) var(--ease-smooth);
+    box-shadow var(--duration-fast) var(--ease-smooth),
+    border-color var(--duration-fast) var(--ease-smooth);
 }
 
 .card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-medium);
+  border-color: color-mix(in srgb, var(--color-accent) 42%, var(--color-border));
 }
 
 .card h3 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   margin-bottom: var(--space-2);
 }
 
-.card p {
+.card ul {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.card li {
   color: var(--color-muted);
+}
+
+.links {
+  margin-top: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.links a {
+  color: var(--color-secondary);
+  font-weight: 700;
+  transition:
+    color var(--duration-fast) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-smooth);
+}
+
+.links a:hover,
+.links a:focus-visible {
+  color: var(--color-accent);
+  transform: translateX(4px);
 }
 
 @media (max-width: 64rem) {

@@ -8,10 +8,10 @@ export function ApproachDetails() {
       <div className="container">
         <div className={styles.layout}>
           <ScrollReveal variant="left" className={styles.copy}>
-            <h2 id="approach-heading">A timeline shaped by build discipline</h2>
+            <h2 id="approach-heading">A timeline shaped by elegance, quality, and detail</h2>
             <p>
-              We have evolved from strategic storytelling work into full design and implementation
-              partnerships, allowing teams to launch without fragmentation between concept and code.
+              OrnaLuxe grew from a focused accessories concept into a curated premium label designed
+              for modern professionals who value enduring style.
             </p>
           </ScrollReveal>
 

@@ -32,7 +32,7 @@
 
 .quote {
   font-family: var(--font-heading), serif;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
   margin-bottom: var(--space-3);
   line-height: 1.25;
 }

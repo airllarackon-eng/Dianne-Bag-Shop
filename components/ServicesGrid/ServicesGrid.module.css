@@ -2,6 +2,24 @@
   padding: var(--space-7) 0;
 }
 
+.heading {
+  margin-bottom: var(--space-5);
+  max-width: 48rem;
+}
+
+.kicker {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.76rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-2);
+  font-weight: 700;
+}
+
+.heading h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -9,7 +27,7 @@
 }
 
 .card {
-  grid-column: span 6;
+  grid-column: span 4;
   background: var(--color-paper-strong);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -22,7 +40,7 @@
 }
 
 .card h3 {
-  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
   margin-bottom: var(--space-2);
 }
 
@@ -34,6 +52,12 @@
   transform: translateY(-8px);
   box-shadow: var(--shadow-medium);
   border-color: color-mix(in srgb, var(--color-accent) 42%, var(--color-border));
+}
+
+@media (max-width: 64rem) {
+  .card {
+    grid-column: span 6;
+  }
 }
 
 @media (max-width: 48rem) {

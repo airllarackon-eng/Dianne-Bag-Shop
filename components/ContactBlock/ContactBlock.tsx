@@ -14,14 +14,11 @@ export function ContactBlock() {
       <div className="container">
         <div className={styles.layout}>
           <ScrollReveal className={styles.content} variant="left">
-            <p className={styles.kicker}>Project inquiry</p>
-            <h2 id="contact-block-heading">Plan your next launch with us</h2>
-            <p>
-              Tell us what you are building and where momentum is blocked. We will share a focused
-              recommendation and delivery approach.
-            </p>
+            <p className={styles.kicker}>Final call</p>
+            <h2 id="contact-block-heading">OrnaLuxe has the statement pieces you need.</h2>
+            <p>Get yours today and define your signature look with confidence, detail, and ease.</p>
             <button type="button" className={styles.button} onClick={() => setIsOpen(true)}>
-              Open inquiry details
+              Open concierge note
             </button>
           </ScrollReveal>
 
@@ -51,8 +48,8 @@ export function ContactBlock() {
       {isOpen ? (
         <Modal
           onClose={() => setIsOpen(false)}
-          title="Before we meet"
-          description="Share your timeline, current website, and the audience you want to move. We will tailor the session around your most important conversion and storytelling challenges."
+          title="Personal shopping concierge"
+          description="Share your preferred category, finish, and daily use needs. Our team will suggest options that fit your style and routine."
         />
       ) : null}
     </section>

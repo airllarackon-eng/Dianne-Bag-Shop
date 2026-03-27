@@ -27,7 +27,7 @@ export function Navbar() {
       <div className={`container ${styles.bar}`}>
         <Link href="/" className={styles.brand}>
           <span className={styles.brandMark} aria-hidden="true">
-            FL
+            OL
           </span>
           <span>{SITE.name}</span>
         </Link>

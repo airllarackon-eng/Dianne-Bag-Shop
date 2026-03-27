@@ -98,6 +98,12 @@
   border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border));
 }
 
+.menuButton:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+  border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border));
+}
+
 .menuBars {
   width: 1.05rem;
   height: 0.95rem;
